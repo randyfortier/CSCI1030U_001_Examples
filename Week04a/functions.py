@@ -25,3 +25,5 @@ def getBinaryRep(n, numDigits):
     return result
 
 print(getBinaryRep(250, 8))
+
+pront('')
