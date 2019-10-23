@@ -26,4 +26,10 @@ def getBinaryRep(n, numDigits):
 
 print(getBinaryRep(250, 8))
 
-pront('')
+grades = [10,20,30]
+sum = 0
+index = 0
+while index < 2:
+    sum = sum + grades[index]
+    index = index + 1
+print('Average:', sum/len(grades))
