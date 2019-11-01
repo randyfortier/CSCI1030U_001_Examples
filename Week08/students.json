@@ -1,0 +1,14 @@
+[
+    {
+        "sid": "100000001",
+        "firstName": "Carla",
+        "lastName": "Rodriguez",
+        "grades": [100.0,90.0,83.0]
+    },
+    {
+        "sid": "100000002",
+        "firstName": "Roberta",
+        "lastName": "Smith",
+        "grades": [80.0,92.0,71.0]
+    }
+]
