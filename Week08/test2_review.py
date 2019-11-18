@@ -95,3 +95,4 @@ with open('numbers.txt', 'r') as file:
             sum += num 
             count += 1
     print('Average:', sum/count)
+
