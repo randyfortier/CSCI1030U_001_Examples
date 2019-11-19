@@ -28,3 +28,33 @@ for i in range(n, 0, -1):
 #print('Before sorting:', numbers)
 insertionSort(numbers)
 #print('After sorting:', numbers)
+
+def fractionalKnapsack(items, capacity):
+    # if there are no items, we cannot carry anything
+    if len(items) < 1:
+        return []
+
+    # if we have no space, we cannot carry anything
+    if capacity == 0:
+        return []
+
+    # choose the next best item (highest value)
+    bestIndex = 0
+    for i in range(len(items)):
+        if items[i][1] > items[bestIndex][1]:
+            bestIndex = i
+
+    # determine how much of that item we can carry
+    if capacity >= items[bestIndex][2]:
+        # we can carry it all
+        carry = items[bestIndex][0], items[bestIndex][2]
+        capacity -= items[bestIndex][2]
+        items = items[0:bestIndex] + items[bestIndex + 1:]
+        return fractionalKnapsack(items, capacity) + [carry]
+    else:
+        # we can carry some, and fill our knapsack
+        carry = items[bestIndex][0], capacity
+        return [carry]
+
+print('Knapsack:', fractionalKnapsack([('diamonds',11,8),('gold',5,13),('silver',3,6)], 20))
+print('Knapsack:', fractionalKnapsack([('diamonds',11,8),('gold',5,13),('silver',3,6)], 25))
